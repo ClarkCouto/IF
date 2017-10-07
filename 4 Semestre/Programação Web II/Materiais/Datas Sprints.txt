@@ -1,0 +1,17 @@
+1,4
+1,1
+
+Sprint 2 (05/10)
+Interfaces (Login e pelo menos 1 CRUD)
+
+
+Sprint 3
+JPA
+
+
+Sprint 4 (25/11)
+Apresentação (30/11)
+
+
+
+

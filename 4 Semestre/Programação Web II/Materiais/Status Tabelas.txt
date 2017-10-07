@@ -1,0 +1,86 @@
+AGENDA - OK
+
+Agenda_DataLimiteEntrega ??
+
+ALUNO - NOK
+  intituicao_idInstituicao
+  idProjeto
+
+AREA - OK
+
+Area_Coordenador - NOK
+
+BOLSA - OK
+
+CAGPPI - 
+  intituicao_idInstituicao
+  ultimoAcesso
+
+COLABORADOR - 
+  area_idArea
+  idProjeto
+
+Colaborador_Declaracao ??
+
+COORDENADOR - 
+  intituicao_idInstituicao
+  idProjeto
+  ultimoAcesso
+
+CURSO - OK
+
+DATA LIMITE ENTREGA - OK
+
+DataLimiteEntrega_DataDocumento ??
+
+DECLARACAO - OK
+  projeto_idProjeto ?? (OK)
+  idProjeto ??
+  responsavel_idPessoa
+
+DOCUMENTO - NOK
+  projeto_idProjeto ?? 
+  idProjeto ??
+  tipoDocumento_idTipoDocumento
+
+EDITAl - NOK
+  agenda_idAgenda
+
+Edital_Bolsa ??
+
+Edital_Projeto ??
+
+GRUPO DE PESQUISA - NOK
+  coordenador_idPessoa
+
+hibernate_sequences ??
+
+INSTITUICAO - OK
+
+Instituicao_Curso
+
+Instituicao_Pessoa
+
+PESSOA - ??
+
+Pessoa_Declaracao ??
+
+PROJETO - NOK
+  coordenador_idPessoa
+
+SETOR DE PESQUISA - NOK
+  intituicao_idInstituicao
+  ultimoAcesso
+
+TEXTO BASE DECLARACAO - OK
+
+TIPO DOCUMENTO - NOK (Nada)
+  idTipoDocumento
+  ativo
+  nome
+
+TipoDocumento_Declaracao
+
+USUARIO - ??
+
+

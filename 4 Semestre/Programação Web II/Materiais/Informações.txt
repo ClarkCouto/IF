@@ -1,0 +1,6 @@
+Final => Tudo maiúsculo e com underscore
+Static Final => Tudo maiúsculo e sublinhado e com underscore
+
+Objeto => Passagem por referência
+String e Wrappers(Integer, Float, etc) => Passagem por valor
+

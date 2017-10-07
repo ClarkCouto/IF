@@ -1,0 +1,138 @@
+Eles são regidos pelo Manifesto ágil (2001),
+
+
+Este trabalho tem como objetivo analisar empiricamente a adoção de métodos
+ágeis e seu impacto no aprendizado, qualidade do código-fonte, produtividade e
+satisfação do cliente. Para isso foi conduzido um estudo de caso em uma instituição
+pública brasileira de grande porte. Foram levantados dados quantitativos e qualitativos
+para responder às questões de pesquisa. Os ganhos e limitações da adoção serão
+discutidos e contrastados com alguns resultados da literatura. Espera-se também gerar
+uma contribuição para outras empresas brasileiras que desejem adotar métodos ágeis,
+sejam elas públicas ou privadas.
+
+
+
+
+
+
+
+- Qual é objetivo deste artigo?
+	Explanar sobre a adoção de métodos ágeis por uma empresa de grande porte.
+
+
+- O que espera este artigo?
+	Informações sobre os resultados da implantação dos métodos ágeis em uma empresa de grande porte.
+
+
+- Montar uma tabela apresentando os autores e as adoçoes que constam na Revisão da literatura.
+	Parsons et al. (2007) = Métodos Ágeis em algumas circunstâncias podem oferecer melhores resultados para projetos de desenvolvimento de software quando comparados às abordagens mais tradicionais.
+	Segundo Dybå (2000) e Nerur et al. (2005) = Métodos Ágeis podem ser vistos como uma reação aos métodos tradicionais
+	Ambler (2006) e VersionOne (2009), dentre os métodos ágeis existentes, a Programação Extrema de Kent Beck (2001), ou XP, e o Scrum de Schwaber (2004) são os mais conhecidos e adotados na indústria.
+	
+
+
+
+
+- Este trabalho tem como objetivo explorar a adoção de métodos ágeis (MAs) e seu impacto em uma organização por meio de quatro questões de pesquisa (QP): Quais são elas, conseguiram atende-las. 
+
+	QP1. MAs aceleram o aprendizado de novas tecnologias, conceitos e padrões
+	QP2. MAs aumentam a qualidade do código do sistema
+	QP3. MAs aumentam a produtividade do time
+	QP4. MAs aumentam a satisfação do cliente
+
+
+
+- Qual é a EMPRESA e seu PORTE?
+	A empresa em estudo é uma instituição pública que atua no sistema financeiro. Ela emprega cerca de 5000 pessoas, 
+	700 delas na área de informática.
+
+
+
+
+- O que foi feito para aumentar a produtividade dos times? 
+	
+
+
+
+
+- Em que ano foi a primeira vez que métodos ágeis foram discutidos em âmbito organizacional?
+
+	Em 2007 foi a primeira vez que métodos ágeis foram discutidos em âmbito organizacional.
+
+
+
+- O planejamento e a execução foram cuidadosos e seguiram algumas das melhores práticas sugeridas por quem? 
+	O planejamento e a execução foram cuidadosos e seguiram algumas das melhores práticas
+	sugeridas por Griffiths (2003), como a obtenção de apoio gerencial, a escolha do
+	método e das práticas, a realização de pilotos, além de educação e suporte ao time.
+
+
+
+
+
+- O apoio da chefia do departamento foi obtido em que momento do planejamento? inicio, meio ou fim.
+	O apoio da chefia do departamento foi obtido no início do planejamento
+
+
+
+
+-  Foi decidido que os primeiros projetos adotariam todas as práticas das metodologias ___________ para fins de aprendizado.
+	XP e scrum
+
+
+
+
+- Foram planejados dois pilotos iniciais, descreve como foram?
+	1º Piloto: Foi iniciado em outubro de 2008 e teve duração prevista de 6 meses. Após 3 meses do início foi feito um treinamento de práticas de XP que teve um efeito positivo. O projeto foi finalizado com resultados satisfatórios. A duração real do projeto foi de 14 meses
+
+	2º Piloto: Iniciou após o término do primeiro e teve duração prevista de 10 meses
+
+	Para os dois pilotos foram escolhidos projetos que não eram críticos do ponto de vista do negócio para que fossem minimizados os riscos da experimentação de novos métodos.
+
+
+
+- Durante o acompanhamento dos pilotos foi possível observar que algumas pessoas possuíam conhecimento teórico do assunto e outras sequer sabiam os desafios trazidos pelo novo paradigma de desenvolvimento, descreve como era a experiência das equipes antes dos pilotos.
+	40% possuía pelo menos 2 anos de experiência com desenvolvimento OO
+	10% nunca havia trabalhado com desenvolvimento
+	90% conheciam pouco da recente arquitetura de referência da organização
+	15% aproximadamente possuíam experiência profissional com alguma prática ágil
+
+
+
+
+
+
+- Os  efeitos da adoção sobre: - sobre o aprendizado; - implantação sobre a qualidade do código; - implantação sobre a produtividade e  a satisfação do cliente; Descreva os Pontos Positivos e Negativos. 
+	- sobre o aprendizado:
+		Positivos:
+		Não houve evidência de que o aprendizado foi prejudicado em função do pensamento de grupo
+		
+		Negativos:
+		
+	- implantação sobre a qualidade do código:
+		Positivos:
+		aproximadamente 19% de aumento da cobertura
+	
+		Negativos:
+
+	- implantação sobre a produtividade:
+		Positivos:
+		No piloto 1, houve um ganho de produtividade de 8,21%
+		Já no piloto 2 foi constatado um ganho de 2 os dados reais não foram divulgados por serem usados em negociação 				contratual entre a instituição e seus subcontratados. produtividade de 30,89%
+		
+		Negativos:
+	- satisfação do cliente:
+		Os clientes avaliaram, em unanimidade, que sua satisfação aumentou muito.
+		Dentre os benefícios destacados pelos clientes, os principais foram: 
+1) redução significativa do prazo de entrega do sistema; 
+2) possibilidade de alteração do escopo ao longo do desenvolvimento e assim obter um software mais aderente às
+necessidades do negócio; 
+3) aumento do entendimento sobre os custos de implementação de uma funcionalidade, conscientizando o cliente sobre a importância da priorização das demandas 
+4) Maior segurança com relação à qualidade dos sistemas por possuírem testes automatizados, escritos e revisados por eles.
+
+
+- Avaliação do GRUPO sobre a A implantação de métodos ágeis em uma organização é um processo lento e complexo, Concordam? Justificam sua decisão.
+	Sim. A troca do método tradicional para o método ágil demanda uma grande mudança em todos os envolvidos no processo. Tanto da equipe responsável por desenvolver/testar o projeto, quanto na própria cultura da organização
+
+
+

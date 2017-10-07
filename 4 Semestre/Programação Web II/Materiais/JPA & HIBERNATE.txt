@@ -1,0 +1,107 @@
+JPA & HIBERNATE
+
+Adicionar os JARs do Hibernate e do JPA
+	Libraries -> Botão direito -> Add JAR/Folder
+
+Criar a classe e adicionar as anotações conforme necessário
+	A classe deve extender a Serializable
+
+	Definir que a classe devevá ser convertida em tabela
+		@Entity 
+		public class NomeClasse {
+
+	Definir a chave primária (PK)
+		@Id //Identifica que é a PK
+		@GeneratedValue //Identifica que deve ser auto incrementável
+		private Long id;
+
+	Somente Data
+		@Temporal(TemporalType.DATE)
+
+	Somente Hora
+		@Temporal(TemporalType.TIME)
+
+	Data e Hora 
+		@Temporal(TemporalType.TIMESTAMP)
+
+
+	Utilizando ENUM
+
+	
+	public static enum Sexo {
+        Masculino, Feminino
+    }
+
+	@Enumerated(EnumType.STRING)
+
+
+	define de que forma o seu campo enum será salvo em banco de dados, por padrão é utilizado o EnumType.ORDINAL o que significa que o seu enum será salvo em forma de números no banco de dados. EnumType.STRING força o provedor de persistência a utilizar o nome literal utilizado na declaração do enum, neste caso Masculino e Feminino;
+
+
+
+
+
+	Definir nome tabela no banco diferente do nome da classe
+		@Entity 
+		@Table(name="NomeClasseNoBanco")
+		public class NomeClasse {
+
+	Definir nome coluna no banco diferente do que está na classe
+		@Column(name = "nome_coluna", nullable = true)
+		private String coluna;
+
+Criar o arquivo de persistência
+
+	<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+
+	 <persistence-unit name="tarefas">
+
+	   <!-- provedor/implementacao do JPA -->
+	   <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+	   <!-- entidade mapeada -->
+	   <class>br.com.caelum.tarefas.modelo.Tarefa</class>
+
+	   <properties>
+	  <!-- dados da conexao -->
+	   <property name="javax.persistence.jdbc.driver" 
+	       value="com.mysql.jdbc.Driver" />
+	  <property name="javax.persistence.jdbc.url" 
+	      value="jdbc:mysql://localhost/fj21" />
+	  <property name="javax.persistence.jdbc.user" 
+	      value="root" />
+	  <property name="javax.persistence.jdbc.password" 
+	      value="" />
+
+	   <!--  propriedades do hibernate -->
+	   <property name="hibernate.dialect" 
+	      value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+	  <property name="hibernate.show_sql" value="true" />
+	  <property name="hibernate.format_sql" value="true" />
+
+	  <!--  atualiza o banco, gera as tabelas se for preciso -->
+	  <property name="hibernate.hbm2ddl.auto" value="update" />
+	    
+	   </properties>
+	 </persistence-unit>
+	</persistence>
+
+
+
+Criar a classe GerarTabelas 
+	
+	public class GeraTabelas {
+
+	  public static void main(String[] args) {
+	    EntityManagerFactory factory = Persistence.
+	          createEntityManagerFactory("tarefas");
+
+	    factory.close();
+	  }
+	}
+
+

@@ -1,0 +1,20 @@
+1. O erro está na linha “vet[0] = new Figura();”, pois a classe figura é abstrata e não pode ser instanciada.
+
+2. Mesmo erro da questão anterior na linha “Figura obj = new Figura();”, bem como nas linhas "obj.cor = new Cor(0,0,0);", pois as propriedades são estáticas e deveriam ser acessadas de forma estática. E na linha "obj.contador = 0; System.out.println(obj.getContador());", pois a forma mais correta seria acessar através da própria classe e não da instância.
+
+3. Mesmo erro das questões anteriores na linha “Figura obj = new Figura();”. Bem como na linha "System.out.println(obj.getContador());", pois a forma mais correta seria acessar através da própria classe e não da instância. 
+
+4. O erro está nas linhas “obj.cor = new Cor(255, 255, 255); obj.contador = 0; obj.raio = 3.0;“, pois as propriedades não são públicas, desta maneira a única forma de alterá-las seria através dos métodos set. E na linha "System.out.println(obj.PI);", pois a forma mais correta seria acessar através da própria classe e não da instância. 
+ 
+5. O erro está na linha “public class Retangulo extends Quadrado{“, pois a classe quadrado é final e desta forma não pode ser estendida.
+
+3.1 Ela é abstrata, ou seja, ela não pode ser instanciada.
+ 
+3.2.1 Sim, ela possui o atributo modCount e o construtor AbstractList() que são protegidos, e isso significa que a super, as sub e as demais classes do mesmo pacote possuem acesso, porém a partir das demais classes é como se eles não existissem,  
+
+3.2.2 Sim, ela possui o método abstrato get e isso significa que na classe AbstractList existe somente a assinatura deste método e que o mesmo deverá ser implementado nas suas subclasses ou então declarado como abstrato e implementado nas subclasses deste subclasse. 
+
+3.3 No projeto, classe TesteMath.
+
+3.4 No projeto, classe TesteVetor.
+
