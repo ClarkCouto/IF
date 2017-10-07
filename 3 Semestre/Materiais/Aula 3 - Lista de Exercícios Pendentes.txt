@@ -1,0 +1,293 @@
+LISTA DE EXERCÍCIOS
+1) Determineoqueocorrequandoocódigoabaixoéexecutado:
+   public class Questao1 {
+     public static void main(String[] args) {
+Telefone telefones[] = new Telefone[5]; telefones[0] = new Telefone();
+telefones[2] = new Telefone(51, 55667788); for (int i = 0; i < telefones.length; i++) {
+Disciplina: Programação para Web I
+ 
+ 
+Semestre: 3o
+ 
+ 
+Turma: Noite
+Data: 21/03/2017
+ 
+ 
+Professora: Silvia Bertagnolli
+ 
+ } }
+}
+System.out.println(telefones[i].toString());
+2) Determineoqueocorrequandoocódigoabaixoéexecutado:
+   import java.util.*;
+   public class Questao2 {
+public static void main(String[] args) {
+LinkedList<Telefone> telefones = new LinkedList<Telefone>(); telefones.add(new Telefone());
+telefones.add(new Telefone(51, 55667788));
+telefones.add(3, new Telefone(55, 33445566)); telefones.remove(0);
+telefones.remove(0);
+telefones.remove(1);
+} }
+3) Determineoqueocorrequandoocódigoabaixoéexecutado:
+   1. public class Questao3{
+2.
+3.
+4.
+5.
+6.    }
+7.}
+public static void main(String args[]) { int i = 5571;
+i = i / 0;
+System.out.println("O resultado " + i);
+4) Determineoqueocorrequandoocódigoabaixoéexecutado:
+   1. public class Questao4 {
+2.
+3.
+4.
+5.
+6.
+7.
+8.       }
+9.   }
+10.}
+public static void main(String[] args) {
+   try {
+   int i = (int) Math.random();
+   int j = 10 / i;
+}catch (ArithmeticException e) {
+   e.printStackTrace();
+Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul - Campus Porto Alegre Rua Cel. Vicente, 281 | Bairro Centro Histórico | CEP 90.030-041 | Porto Alegre/RS
+ MINISTÉRIO DA EDUCAÇÃO SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO GRANDE DO SUL CAMPUS PORTO ALEGRE
+CURSO SUPERIOR DE TECNOLOGIA EM SISTEMAS PARA INTERNET
+5) Analisandoasaídagerada,respondaositensabaixoparaasquestões1a4:
+4.1 Qual o nome da classe em que foi gerada a exceção? 4.2 Qual o nome do método em que a exceção foi gerada? 4.3 Qual a linha que gerou a exceção?
+4.4 Qual exceção foi gerada?
+4.5 Qual a causa da exceção gerada?
+6) Façaotratamentodasexceçõesdasquestões1a4.
+7) Façaotratamentodasexceçõesdocódigoabaixo.
+   1. import java.util.*;
+   2. public class Questao7{
+3. public static void main(String args[]) {
+4. TreeSet<Number> numeros = new TreeSet<>();
+   5.     numeros.add(new Integer(5));
+   6.     numeros.add(8);
+   7.     numeros.add(new Double(5.9));
+   8.     numeros.add(null);
+   9.     for(Number num : numeros)
+10.
+11. } 12. }
+System.out.println("Num: " + num);
+8) Analiseocódigoabaixo,determineoqueeleiráimprimireapósfaçaotratamentodasexce-
+ções.
+1. public class Questao8 {
+2. public static void main(String[] args) { 3. System.out.println("Início do main");
+4. metodo1();
+5. System.out.println("Fim do main");
+6. }
+7. static void metodo1() {
+8. System.out.println("Início do metodo1"); 9. metodo2();
+10. System.out.println("Fim do metodo1"); 11. }
+12. static void metodo2() {
+System.out.println("Início do metodo2"); int[] array = new int[10]; for(inti=0;i<=15;i++){
+13.
+14.
+15.
+16.
+17.
+18. }
+19. System.out.println("Fim do metodo2"); 20. }
+21. }
+  array[i] = i;
+System.out.println(i);
+Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul - Campus Porto Alegre Rua Cel. Vicente, 281 | Bairro Centro Histórico | CEP 90.030-041 | Porto Alegre/RS
+ MINISTÉRIO DA EDUCAÇÃO SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO GRANDE DO SUL CAMPUS PORTO ALEGRE
+CURSO SUPERIOR DE TECNOLOGIA EM SISTEMAS PARA INTERNET
+9) Analiseocódigoabaixo,apósdetermineoqueeleiráimprimir.Agora,respondaaositens9.1a 9.5:
+9.1 O que o código da linha 10 faz?
+9.2 O que o código da linha 14 faz?
+9.3 Você pode alterar a ordem dos blocos catch da linha 6 e da linha 8? Justifique sua resposta. 9.4 Você pode alterar a ordem dos blocos catch da linha 8 e da linha 11? Justifique sua resposta. 9.5 Você pode alterar a ordem dos blocos catch da linha 11 e da linha 13? Justifique sua respos- ta.
+   1. public class Questao9 {
+   2.
+   3.
+   4.
+   5.
+   6.
+   7.
+   8.
+   9.
+   10.
+   11.
+   12.
+   13.
+   14.
+   15.
+   16.
+   17.
+   18.
+   19.
+   20.   }
+   21. }
+public static void main(String args[]) {
+  try{
+    int a[] = new int[10];
+System.out.println("Acessando elemento 20 : " + a[20]); }catch(NullPointerException e){
+System.out.println("NullPointerException :" + e.getMessage()); }catch(ArrayIndexOutOfBoundsException e){
+System.out.println("ArrayIndexOutOfBoundsException :" +
+     e.getMessage());
+  }catch(RuntimeException e){
+System.out.println("RuntimeException :" + e.getMessage()); }catch(Exception e){
+    e.printStackTrace();
+  }catch(Error e){
+System.out.println("Error :" + e.getMessage()); }catch(Throwable e){
+System.out.println("Throwable :" + e.getMessage()); }
+10) Analise o código abaixo, após determine o que ele irá imprimir. Justifique sua resposta.
+   1. public class Questao10 {
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.      }
+10.   }
+11. }
+public static Object criaObjeto() { return null; } public static void main(String[] args) {
+try {
+Object obj = criaObjeto(); System.out.println(obj.toString());
+}catch (NullPointerException e) {
+   e.printStackTrace();
+11) Explique com suas palavras a diferença entre os blocos, try, catch e finally. Você acha que um bloco catch pode ser definido sem um bloco try? Você acha que um bloco finally pode ser defi- nido sem um bloco try? Você acha que um bloco try pode ser definido sem um bloco catch?
+Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul - Campus Porto Alegre Rua Cel. Vicente, 281 | Bairro Centro Histórico | CEP 90.030-041 | Porto Alegre/RS
+ MINISTÉRIO DA EDUCAÇÃO SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO GRANDE DO SUL CAMPUS PORTO ALEGRE
+CURSO SUPERIOR DE TECNOLOGIA EM SISTEMAS PARA INTERNET
+12) Analisar o programa a seguir para determinar a saída gerada quando a entrada realizada pelo usuário for 2 e, posteriormente, 3.
+     1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20.
+21.
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+30.
+31.
+32.
+33.
+34.
+35.
+36.
+37.
+38.
+39.
+import java.io.*;
+import javax.swing.*;
+public class Questao12 {
+  public static void main(String[] args) {
+   System.out.println("1");
+   try{
+      System.out.println("2");
+      int num = Integer.parseInt(JOptionPane.showInputDialog(null,
+} }
+}
+System.out.println("Número:"+num);
+switch(num){
+case 1:
+case 2:
+case 3:
+case 4:
+System.out.println("3");
+int valor1 = Integer.parseInt("abc");
+System.out.println(valor1);
+System.out.println("4");
+String palavras[] = {"casa", "apto", "morada"};
+System.out.println(palavras[3]);
+System.out.println("5");
+double vetor[] = null;
+for (double valor: vetor) {
+     System.out.println(valor);
+}
+System.out.println("6");
+File f = new File("c:\\teste.txt");
+f.createNewFile();
+   }
+}catch(NumberFormatException e){
+       System.out.println("3.1");
+}catch(ArrayIndexOutOfBoundsException e){
+       System.out.println("4.1");
+}catch(NullPointerException e){
+       System.out.println("5.1");
+}catch(IOException e){
+       System.out.println("6.1");
+}finally{
+System.out.println("7");
+"Informe um número:"));
+   Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Sul - Campus Porto Alegre Rua Cel. Vicente, 281 | Bairro Centro Histórico | CEP 90.030-041 | Porto Alegre/RS
+ 13) Determine a saída gerada pelo código abaixo.
+1. 2. 3. 4. 5.
+class ProprioErro extends Exception {
+   private int erro;
+   ProprioErro (int erro) { this.erro =erro; }
+   public String toString () { return("ProprioErro[" +erro+ "]");}
+}
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10. 11. 12. } 13. }
+MINISTÉRIO DA EDUCAÇÃO SECRETARIA DE EDUCAÇÃO PROFISSIONAL E TECNOLÓGICA INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO RIO GRANDE DO SUL CAMPUS PORTO ALEGRE
+public class Teste{
+   static void calcula (int a) throws ProprioErro {
+                  if(a<=12) throw new ProprioErro(a);
+             }
+             public static void main(String args[]){
+try {
+calcula(9);
+                      calcula(11);
+               }catch (ProprioErro e){
+                   System.out.println("Erro encontrado: " +e);
+               }
+14) Crie a interface genérica Lista como descrito abaixo:
+- A lista irá conter elementos
+- Defina os métodos abaixo usando genéricos onde for possível: public void adicionar(int indice, Object obj)
+public boolean remover(Object obj)
+public String listar()
+public int totalizar()
+public Object getFirst()
+public Object getLast()
+15) Defina a classe MinhaLista observando as seguintes regras:
+- MinhaLista deve ser definida como genérica e usar a interface Lista (Questão 14)
+- Use a classe LinkedList para armazenar objetos na classe MinhaLista
+- Use todos os conceitos de genéricos e observe os conceitos de tratamento de exceções
+- Defina os métodos adicionar, remover e getUltimo considerando as observações abaixo:
+1. public void adicionar(int indice, Object obj)- método deve tratar a exceção defi- nida pela documentação
+2. public Object remover(Object obj) – método deve propagar a exceção definida pela documentação
+3. public int getUltimo() – método deve causar a exceção definida pela documentação 4. public String toString()
+16) Crie uma classe de Testes para testar a lista definida na questão 15. Essa classe deve fazer os tratamentos das exceções, quando for necessário.

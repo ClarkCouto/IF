@@ -1,0 +1,117 @@
+4 ways to pass parameter from JSF page to backing bean
+
+As i know,there are 4 ways to pass a parameter value from JSF page to backing bean :
+
+    Method expression (JSF 2.0)
+    f:param
+    f:attribute
+    f:setPropertyActionListener
+
+Let see example one by one :
+1. Method expression
+
+Since JSF 2.0, you are allow to pass parameter value in the method expression like this #{bean.method(param)}.
+
+JSF page…
+
+<h:commandButton action="#{user.editAction(delete)}" />
+
+Backing bean…
+
+@ManagedBean(name="user")
+@SessionScoped
+public class UserBean{
+
+	public String editAction(String id) {
+	  //id = "delete"
+	}
+
+}
+
+Note
+If you are deploy JSF application in servlet container like Tomcat, make sure you include the “el-impl-2.2.jar” properly. For detail, please read this article – JSF 2.0 method expression caused error in Tomcat.
+2. f:param
+
+Pass parameter value via f:param tag and get it back via request parameter in backing bean.
+
+JSF page…
+
+<h:commandButton action="#{user.editAction}">
+	<f:param name="action" value="delete" />
+</h:commandButton>
+
+Backing bean…
+
+@ManagedBean(name="user")
+@SessionScoped
+public class UserBean{
+
+	public String editAction() {
+
+	  Map<String,String> params =
+                FacesContext.getExternalContext().getRequestParameterMap();
+	  String action = params.get("action");
+          //...
+
+	}
+
+}
+
+3. f:atribute
+
+Pass parameter value via f:atribute tag and get it back via action listener in backing bean.
+
+JSF page…
+
+<h:commandButton action="#{user.editAction}" actionListener="#{user.attrListener}">
+	<f:attribute name="action" value="delete" />
+</h:commandButton>
+
+Backing bean…
+
+@ManagedBean(name="user")
+@SessionScoped
+public class UserBean{
+
+  String action;
+
+  //action listener event
+  public void attrListener(ActionEvent event){
+
+	action = (String)event.getComponent().getAttributes().get("action");
+
+  }
+
+  public String editAction() {
+	//...
+  }
+
+}
+
+4. f:setPropertyActionListener
+
+Pass parameter value via f:setPropertyActionListener tag, it will set the value directly into your backing bean property.
+
+JSF page…
+
+<h:commandButton action="#{user.editAction}" >
+    <f:setPropertyActionListener target="#{user.action}" value="delete" />
+</h:commandButton>
+
+Backing bean…
+
+@ManagedBean(name="user")
+@SessionScoped
+public class UserBean{
+
+	public String action;
+
+	public void setAction(String action) {
+		this.action = action;
+	}
+
+	public String editAction() {
+	   //now action property contains "delete"
+	}
+
+}

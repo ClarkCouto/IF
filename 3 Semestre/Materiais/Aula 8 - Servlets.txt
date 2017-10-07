@@ -1,0 +1,23 @@
+Servlet
+
+Cliente magro -> Só tem requisições HTML, CSS e JS. O processamento é feito no servidor
+
+Eclipse -> Tomcat
+
+Netbeans -> Glassfish (Já vem instalado)
+
+Servidor
+Apache (Linux)
+IIS (Windows)
+
+Container
+Tomcat
+Glassfish
+
+
+
+Córdoba
+
+Quando der o erro porta já está em uso tem que criar um novo servidor
+
+Aba Serviços -> Adicionar Servidor -> Domínio Local -> 

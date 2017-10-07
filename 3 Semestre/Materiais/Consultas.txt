@@ -1,0 +1,72 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
+
+public class Consulta {
+	private Paciente paciente;
+	private Data data;
+	private Horario horario;
+	private Agenda agenda;
+	private double valor;
+	DecimalFormat numberFormat = new DecimalFormat ("#,##0.0000");
+	
+	public Consulta(){}
+	
+	public Consulta(Paciente paciente, Data data, Horario horario, Agenda agenda, double valor) {
+		this.paciente = paciente;
+		this.data = data;
+		this.horario = horario;
+		this.agenda = agenda;
+		this.valor = valor;
+
+		numberFormat.setMinimumFractionDigits(4);
+		numberFormat.setMaximumIntegerDigits(3);
+	}
+
+	public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}
+
+	public Data getData() {
+		return data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	public Horario getHorario() {
+		return horario;
+	}
+
+	public void setHorario(Horario horario) {
+		this.horario = horario;
+	}
+
+	public Agenda getAgenda() {
+		return agenda;
+	}
+
+	public void setAgenda(Agenda agenda) {
+		this.agenda = agenda;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	@Override
+	public String toString() {
+		return "=================== Consulta ===================\n" 
+				+ paciente + "\nData = " + data + "\n" + horario 
+				+ "\nValor: " + String.format(new Locale("pt", "BR"), "%.2f", valor);
+	}
+}

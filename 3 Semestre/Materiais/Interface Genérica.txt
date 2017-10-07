@@ -1,0 +1,81 @@
+Interface Genérica
+
+package exercicio1_2_ListaGenerica;
+
+public interface Lista<T>{
+//	1) CrieainterfacegenéricaListacomodescritoabaixo:
+//		• A lista irá conter elementos
+//		• A lista está definida no pacote br.edu.ifrs.progweb1.util;
+//		• Defina os métodos abaixo usando o conceito de genéricos onde for possível:
+//		public void adicionar(Object obj) 
+//		public boolean remover(int i) 
+//		public String listar()
+//		public int totalizar()
+//		public void removerTodos()
+//		public Object getFirst()
+//		public void removeElement(Object obj)
+	
+	public void adicionar(T t);
+	public boolean remover(int posicao);
+	public String listar();
+	public int totalizar();
+	public void removerTodos();
+	public T getFirst();
+	public void removeElement(T t);
+}
+
+
+
+
+==================================================================================
+Lista
+
+package exercicio1_2_ListaGenerica;
+import java.util.LinkedList;
+
+//Agora, crie a classe MinhaLista que implementa a interface Lista genérica definida previamente. 
+//Essa classe deve declarar um atributo da classe LinkedList para armazenar objetos na classe 
+//MinhaLista e implemente todos os métodos da interface Lista.
+
+public class MinhaLista<T> implements Lista{
+	private LinkedList<T> lista;
+
+	public MinhaLista(){
+		lista = new LinkedList<T>();
+	}
+	
+	@Override
+	public void adicionar(Object t) {
+		lista.add((T)t);
+	}
+
+	@Override
+	public boolean remover(int posicao) {
+		return (boolean) lista.remove(posicao);
+	}
+
+	@Override
+	public String listar() {
+		return lista.toString();
+	}
+
+	@Override
+	public int totalizar() {
+		return lista.size();
+	}
+
+	@Override
+	public void removerTodos() {
+		lista.removeAll(lista);
+	}
+
+	@Override
+	public T getFirst() {
+		return lista.getFirst();
+	}
+
+	@Override
+	public void removeElement(Object t) {
+		lista.remove((T)t);
+	}
+}

@@ -1,0 +1,34 @@
+Classe Genérica
+
+public class Par <P, S>{
+	private P primeiro;
+	private S segundo;
+	public Par(){}
+	public Par(P p, S s){
+		primeiro = p;  segundo = s;
+	}
+	public P getPrimeiro(){return primeiro;}
+	public S getSegundo(){return segundo;}
+	public void setPrimeiro(P p){primeiro= p;}
+	public void setSegundo(S s){segundo = s;}
+	public String toString(){ return primeiro + " " + segundo; }
+}
+
+
+
+================================================================
+
+Teste
+
+public class TestePar {
+
+	public static void main(String[] args) {
+		Par<Integer, String> mes = new Par<>(); 
+		mes.setPrimeiro(1); mes.setSegundo("Janeiro"); 
+		System.out.println(mes.toString()); 
+		mes.setPrimeiro(2); 
+		mes.setSegundo("Fevereiro"); 
+		System.out.println(mes.toString());
+	}
+
+}

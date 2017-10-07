@@ -1,0 +1,9 @@
+
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy - EEEE (MMMM)", new Locale("pt", "BR"));        
+        return data.format(formatter);
+    }   
+
+
+    PRINT = Data: 11/04/2017 - Terça-feira (Abril)

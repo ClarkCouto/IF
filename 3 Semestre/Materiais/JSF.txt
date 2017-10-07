@@ -1,0 +1,39 @@
+JSF: Arquitetura
+	Converters
+		Convertem o valor de um componente (como datas, moedas, porcentagem e outros) dando-lhes novos formatos
+	Validators
+		Responsáveis por validar a entrada ocorrida no componente pelo usuário
+	Managed Bean
+		Lógica do negócio é gerenciada pelos managed beans, controlando também a navegação das páginas
+	Ajax
+		Permite enviar/receber dados usando Ajax
+
+
+TAGLibs
+Usando f:
+	As TAGs core possuem diversos componentes não visuais, como tratadores de eventos ou validadores
+	xmlns:f="http://java.sun.com/jsf/core"
+
+Usando h:
+	Usamos:
+	h:body no lugar de body
+	h:form no lugar de form
+	h:inputText no lugar de input type=“text”
+	Para escrever um texto podemos usar: 
+	<h:body>
+		<h:outputText value ="Olá Mundo!" /> <br />
+	</h:body>
+
+
+
+
+<h:head>
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+	<h:form>
+	<h:outputLabel for="nome" value="Digite seu nome:"/> 
+	<h:inputText id="nome" />
+	<h:commandButton value="Ok" />
+	</h:form>
+</h:body>

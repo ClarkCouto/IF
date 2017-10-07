@@ -1,0 +1,6 @@
+ORDENAÇÃO
+Para ordenar È necess·rio ter um critÈrio de ordenaÁ„o
+Como fazer isso? A classe deve implementar a interface Comparable. Essa interface define o mÈtodo compareTo(T obj) que retorna:
+1 = o atributo do objeto origem È maior que o atributo passado como par‚metro
+0 = objetos tem valor igual
+-1 = objeto origem È menor que o destino

@@ -1,0 +1,50 @@
+============== COMPARABLE ================
+SoluÁ„o 1:
+class Dog implements Comparable<Dog>{
+
+
+    @Override
+    public int compareTo(Dog o) {
+        return this.name.compareTo(o.getName()); // dog name sort in ascending order 
+        //return o.getName().compareTo(this.name); use this line for dog name sort in descending order 
+    }
+
+
+    Collections.sort(listDog);
+
+
+SoluÁ„o 2:
+Collections.sort(dogList, new Comparator<Dog>(){
+    public int compare(Dog d1, Dog d2){
+         return d1.getName().compareTo(d2.getName());
+    }    
+});
+
+SoluÁ„o 3:
+public class TitularComparator implements Comparator<Conta> {
+    public int compare(Conta conta, Conta outraConta) {
+        return conta.getTitular().
+                compareTo(outraConta.getTitular());
+    }
+}
+
+TitularComparator comparator = new TitularComparator();
+Collections.sort(lista, comparator);
+
+
+
+================ ITERATOR ================
+
+Iterator it = map.values().iterator();
+while(it.hasNext()){
+  System.out.println((Integer)it.next());
+};
+
+
+================ ENUMERATOR ================
+
+Emuneration <Integer> e = itens.elements();
+while(e.hasMoreElements()) => Percorre enquanto existirem objetos
+  System.out.println((Integer)e.nextElememt()); => integer = cast / nextElement = pega o atual e aponta para o prÛximo
+
+  

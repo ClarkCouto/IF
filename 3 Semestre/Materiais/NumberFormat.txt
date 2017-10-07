@@ -1,0 +1,9 @@
+
+
+    @Override
+    public String toString() {        
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+        formatter.setMaximumIntegerDigits(3);
+        formatter.setMaximumFractionDigits(4);        
+        return formatter.format(valor);
+    }

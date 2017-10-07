@@ -1,0 +1,12 @@
+LISTA DE EXERCÍCIOS
+17) Use as classes abaixo para criar o Album de Figuras de jogadores vinculados a clubes de fute- bol. Observe que a classe álbum deve conter várias figuras, e cada figurinha é de um jogador, e cada jogador pertence a um clube.
+ Obs.:
+17.1 a classe álbum deve possuir o método main()
+17.2 você deve adicionar 5 figuras no álbum
+17.3 remover a figura da posição 2
+17.4 listar todo o álbum
+17.5 remover a figura da posição 5 do álbum (verificar se ela existe antes de excluir)
+17.6 mostrar o número da figuras que foram registradas no álbum
+17.7 ordenar o álbum usando o número da figura
+
+

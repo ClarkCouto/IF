@@ -1,0 +1,33 @@
+LISTA DE EXERCÍCIOS
+1) CrieainterfacegenéricaListacomodescritoabaixo:
+• A lista irá conter elementos
+• A lista está definida no pacote br.edu.ifrs.progweb1.util;
+• Defina os métodos abaixo usando o conceito de genéricos onde for possível:
+public void adicionar(Object obj) public boolean remover(int i) public String listar()
+public int totalizar()
+public void removerTodos()
+public Object getFirst()
+public void removeElement(Object obj)
+
+2) Agora, crie a classe MinhaLista que implementa a interface Lista genérica definida previamen- te. Essa classe deve declarar um atributo da classe LinkedList para armazenar objetos na classe MinhaLista e implemente todos os métodos da interface Lista.
+
+3) MonteumaclassedetestesparaarmazenarobjetosdaclasseProdutoqueusaaclasseCodigo genérica, definida nos slides da aula presencial.
+
+4) CrieainterfacegenéricaMapacomodescritoabaixo:
+• O mapa irá conter elementos compostos por chave e valor
+• O mapa está definido no pacote br.edu.ifrs.progweb2.util;
+Defina os métodos abaixo usando o conceito de genéricos onde for possível: public Objec get(Object obj) retorna o valor de uma chave específica
+public boolean isEmpty() retorna true se o mapa está vazio
+public Set keySet() retorna um conjunto com todas as chaves
+public int size() retorna o nnúmero de objetos no mapa
+public void put(Object chave, Object valor) – adiciona um objeto no mapa usando a chave e o valor
+public void remove (Object obj) – remove um objeto usando a sua chave
+public List values() – retorna uma lista com os valores armazenados no mapa
+
+5) Agora,crieaclasseMeuMapaqueimplementaainterfaceMapagenéricadefinidapreviamen- te. Essa classe deve declarar um atributo da classe LinkedList para armazenar objetos na classe MeuMapa e implemente todos os métodos da interface Mapa.
+
+6) MonteumaclassedetestesparaarmazenarobjetosdaclasseStringcomochaveeDoubleco- mo valor.
+ 
+7) ImplementeaestruturadedadosPilhausandoaLinkedListeumainterfacesemelhanteàdo exercício 1. Crie uma classe chamada MinhaPilha com os principais métodos exigidos por este tipo de estrutura de dados. Depois, monte uma classe de testes para verificar se a sua pilha es- tá funcionando corretamente.
+
+8) ImplementeaestruturadedadosFilausandoaLinkedListeumainterfacesemelhanteàdoe- xercício 1. Crie uma classe chamada MinhaFila com os principais métodos exigidos por este ti- po de estrutura de dados. Depois, monte uma classe de testes para verificar se a sua fila está funcionando corretamente.

@@ -1,0 +1,7 @@
+*** Cálculo entre duas datas
+- Calcula a diferença de dias entre as duas datas
+	long diferencaEmDias = ChronoUnit.DAYS.between(hoje, outraData);
+- Calcula a diferença de meses entre as duas datas
+        long diferencaEmMes = ChronoUnit.MONTHS.between(hoje, outraData);
+- Calcula a diferença de anos entre as duas datas
+        long diferencaEmAnos = ChronoUnit.YEARS.between(hoje, outraData);

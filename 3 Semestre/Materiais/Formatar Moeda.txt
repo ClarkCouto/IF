@@ -1,0 +1,21 @@
+http://www.guj.com.br/t/duvida-como-formatar-valores-para-moeda-corrente-em-java-resolvido/76580
+
+
+DecimalFormat formatoDois = new DecimalFormat("##,###,###,##0.00", new DecimalFormatSymbols (new Locale ("pt", "BR")));
+formatoDois.setMinimumFractionDigits(2); 
+formatoDois.setParseBigDecimal (true);
+sysout(formatoDois.format(valor));
+
+
+valor deve ser do tipo double[/quote]
+Uma outra forma de fazer isso é utilizar NumberFormat como no exemplo:
+
+	NumberFormat formatoMoeda = NumberFormat.getCurrencyInstance(); 
+	System.out.println(formatoMoeda.format(45.7887));
+Você também pode passar apara o banco o formato da moeda caso use moedas de paises diferentes e fazer:
+
+	formatoMoeda.setCurrency(Currency.getInstance("USD"));
+	System.out.println(formatoMoeda.format(45.7887));
+Para pegar a string do código da moeda conforme a ISO 42179 utilizada acima você pode fazer
+
+	NumberFormat.getCurrencyInstance().getCurrency().getCurrencyCode();

@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf810
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\froman\fcharset0 Times-Roman;\f2\fnil\fcharset0 Monaco;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red127\green0\blue85;\red106\green62\blue62;
+\red42\green0\blue255;\red0\green0\blue192;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c41569\c24314\c24314;
+\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c0\c0\c75294;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+    //create TreeMap instance\
+    TreeMap treeMap = new TreeMap();\
+\
+    //add key value pairs to TreeMap\
+    treeMap.put("1","One");\
+    treeMap.put("2","Two");\
+    treeMap.put("3","Three");\
+\
+    /*\
+      get Collection of values contained in TreeMap using\
+      Collection values()        \
+    */\
+    Collection c = treeMap.values();\
+\
+    //obtain an Iterator for Collection\
+    Iterator itr = c.iterator();\
+\
+    //iterate through TreeMap values iterator\
+    while(itr.hasNext())\
+      System.out.println(itr.next());\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1 \cf2 or:\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf2    for (Map.Entry<K,V> entry : treeMap.entrySet()) \{\
+        V value = entry.getValue();\
+        K key = entry.getKey();\
+   \}\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f1 \cf2 or:\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf2    // Use iterator to display the keys and associated values\
+   System.out.println("Map Values Before: ");\
+   Set keys = map.keySet();\
+   for (Iterator i = keys.iterator(); i.hasNext();) \{\
+     Integer key = (Integer) i.next();\
+     String value = (String) map.get(key);\
+     System.out.println(key + " = " + value);\
+   \}\
+\
+\
+Exemplo:\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs22 \cf0 \kerning1\expnd0\expndtw0 	\cf3 public\cf0  \cf3 static\cf0  \cf3 void\cf0  main(String[] \cf4 args\cf0 ) \{\
+		TreeMap<Long, ClientePF> \cf4 mapaClientes\cf0  =  \cf3 new\cf0  TreeMap<Long, ClientePF>();\
+		\cf4 mapaClientes\cf0 .put(1598825089L, \cf3 new\cf0  ClientePF(\cf5 "Clark"\cf0 , \cf3 new\cf0  Endereco (\cf5 "Adao Baino, 701"\cf0 , \cf5 "Apto 409"\cf0 ), \cf3 new\cf0  Telefone(51, 985436313)));\
+		\
+		\cf3 for\cf0  (Map.Entry<Long,ClientePF> \cf4 entry\cf0  : \cf4 mapaClientes\cf0 .entrySet()) \{\
+	        Long \cf4 key\cf0  = \cf4 entry\cf0 .getKey();\
+			ClientePF \cf4 value\cf0  = \cf4 entry\cf0 .getValue();\
+			System.\cf6 out\cf0 .println(\cf5 "Cliente: "\cf0  + \cf4 key\cf0 .toString() + \cf5 "\\n"\cf0  + \cf4 value\cf0 .toString());\
+	   \}\
+	\}
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\
+}

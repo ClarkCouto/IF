@@ -1,0 +1,128 @@
+Classes Wrappers (Integer, Byte, Short..)
+	String
+	Java 
+
+São ordenadas automaticamente usando Comparable
+
+System.out.println => Busca o toString e imprime
+
+
+================== MAP ==================
+Direita = Dinâmico (Classe e pode ser instânciada)
+Esquerda = Estático (Interface)
+
+Put = inserir valor
+KeySet = chave
+Values = Valor
+
+Hash é formado sobre o valor e não sobre a chave
+
+HashTable => Não permite valores duplicados
+
+TreeMap => Automaticamente ordenado
+
+
+
+================== COMPARABLE ==================
+Solução 1:
+class Dog implements Comparable<Dog>{
+
+
+    @Override
+    public int compareTo(Dog o) {
+        return this.name.compareTo(o.getName()); // dog name sort in ascending order 
+        //return o.getName().compareTo(this.name); use this line for dog name sort in descending order 
+    }
+
+
+    Collections.sort(listDog);
+
+
+Solução 2:
+Collections.sort(dogList, new Comparator<Dog>(){
+    public int compare(Dog d1, Dog d2){
+         return d1.getName().compareTo(d2.getName());
+    }    
+});
+
+Solução 3:
+public class TitularComparator implements Comparator<Conta> {
+    public int compare(Conta conta, Conta outraConta) {
+        return conta.getTitular().
+                compareTo(outraConta.getTitular());
+    }
+}
+
+TitularComparator comparator = new TitularComparator();
+Collections.sort(lista, comparator);
+
+
+
+================== ITERATOR ==================
+
+Iterator it = map.values().iterator();
+while(it.hasNext()){
+	System.out.println((Integer)it.next());
+};
+
+
+================== ENUMERATOR ==================
+
+Emuneration <Integer> e = itens.elements();
+while(e.hasMoreElements()) => Percorre enquanto existirem objetos
+	System.out.println((Integer)e.nextElememt()); => integer = cast / nextElement = pega o atual e aponta para o próximo
+ 
+
+================== ORDENA‚ÌO ==================
+Para ordenar é necessário ter um critério de ordenação
+Como fazer isso? A classe deve implementar a interface Comparable. Essa interface define o método compareTo(T obj) que retorna:
+1 = o atributo do objeto origem é maior que o atributo passado como parâmetro
+0 = objetos tem valor igual
+-1 = objeto origem é menor que o destino
+
+
+================== GENƒRICOS ==================
+E - elemento
+K - Chave
+V - Valor
+T - Tipo
+S, U..
+
+Par<Double, Double> numero = new Par<>();
+numero.setPrimeiro(20.0);
+
+Classe:
+
+public class Par <P, S>{
+  private P primeiro;
+  private S segundo;
+  public Par(){}	
+  public Par(P p, S s){
+	  primeiro = p;  segundo = s;
+  }
+  public P getPrimeiro(){return primeiro;}
+  public S getSegundo(){return segundo;}
+  public void setPrimeiro(P p){primeiro= p;}
+  public void setSegundo(S s){segundo = s;}
+  public String toString(){ return primeiro + " " + segundo;}
+}
+
+
+
+Exemplo Utilização:
+
+		Par<Long, String> par1 = new Par<>();
+		par1.setPrimeiro(1234L);
+		par1.setSegundo("Cris");
+
+		Par<Float, Float> par2 = new Par<>();
+		par2.setPrimeiro(34.5F);
+		par2.setSegundo(28.3F);
+
+
+Tarefa 1
+Criar a classe código que pode ser parametrizada:
+S - Nome do setor (Inteiros ou String)
+C - Código Sequencial Inteiros
+
+

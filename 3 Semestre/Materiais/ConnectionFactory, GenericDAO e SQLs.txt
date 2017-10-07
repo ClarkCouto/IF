@@ -1,0 +1,356 @@
+=====================================================================================
+#####################################################################################
+#####################################################################################
+############ Informações - Criar Peojeto com Conexão ao Banco Mysql #################
+#####################################################################################
+#####################################################################################
+=====================================================================================
+
+Aba Projetos
+    Web Pages
+        Criar as Telas
+
+    Source Packages
+        Criar o pacote classes
+            Criar as classes 
+            Criar os Beans
+        Criar o pacote dao
+            Criar a ConnectionFactory
+            Criar a GenericDAO
+            Criar a SQLs
+            Criar os DAOs
+
+    Libraries
+        Adicionar o JAR do mysql
+
+Aba Services
+    Databases
+        Criar a conexão com o banco
+            New connection
+            Add
+            Localizar o JAR do driver do mysql
+            Next
+            Database: colocar o nome do banco
+            User Name: root
+            Password: deixar em branco
+            Finish
+
+=====================================================================================
+#####################################################################################
+#####################################################################################
+########################### Connection Factory (Classe) #############################
+#####################################################################################
+#####################################################################################
+=====================================================================================
+
+package dao;
+
+import java.sql.*;
+
+/**
+ *
+ * @author Cristiano Couto
+ */
+public class ConnectionFactory {
+    public Connection getConnection() throws ClassNotFoundException, SQLException{
+           Class.forName("com.mysql.jdbc.Driver");
+           String urlBD="jdbc:mysql://localhost:3306/trabalho1jsf";
+           return DriverManager.getConnection(urlBD, "root", "");
+    }
+}
+
+
+=====================================================================================
+#####################################################################################
+#####################################################################################
+############################## Generic DAO (Interface) ##############################
+#####################################################################################
+#####################################################################################
+=====================================================================================
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+/**
+ *
+ * @author Silvia
+ */
+public interface GenericDAO <T> {
+    public int insert(T obj);
+   /* public int update(T obj);
+    public int delete(T obj);*/
+    public java.util.List<T> listAll();
+//    public T findByID(int id);
+}
+
+=====================================================================================
+#####################################################################################
+#####################################################################################
+################################## SQLs (Classe) ####################################
+#####################################################################################
+#####################################################################################
+=====================================================================================
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dao;
+
+/**
+ *
+ * @author Cristiano Couto
+ */
+public enum SQLs {
+    FUNCIONARIO_INSERT("insert into funcionario(nome, salario, uf, estadoCivil, nomeConjuge, situacao, observacoes) values (?, ?, ?, ?, ?, ?, ?)"), 
+    FUNCIONARIO_LISTALL("select * from funcionario"),
+    USUARIO_AUTENTICA("select * from usuario WHERE email = ? and senha = ?"),
+    USUARIO_INSERT("insert into usuario(email, senha) values (?, ?)"), 
+    USUARIO_LISTALL("select * from usuario");
+    
+    private final String sql;
+    SQLs(String sql){
+        this.sql = sql; 
+    
+    }
+
+    public String getSql() {
+        return sql;
+    }    
+}
+            
+=====================================================================================
+#####################################################################################
+#####################################################################################
+############################# Classe Exemplo (Classe) ###############################
+#####################################################################################
+#####################################################################################
+=====================================================================================
+package classes;
+
+import dao.FuncionarioDAO;
+import java.util.*;
+
+public class Funcionario{
+    private String nome;
+    private String salario;
+    private String UF;
+    private String estadoCivil;
+    private String nomeConjuge;
+    private String situacao;
+    private String observacoes;
+    private long idFuncionario;
+
+    public Funcionario() {
+    }
+
+    public Funcionario(String nome, String salario, String UF, String estadoCivil, String nomeConjuge, String situacao, String observacoes) {
+        this(-1, nome, salario, UF, estadoCivil, nomeConjuge, situacao, observacoes);
+    }
+
+    public Funcionario(long idFuncionario, String nome, String salario, String UF, String estadoCivil, String nomeConjuge, String situacao, String observacoes) {
+        this.idFuncionario = idFuncionario;
+        this.nome = nome;
+        this.salario = salario;
+        this.UF = UF;
+        this.estadoCivil = estadoCivil;
+        this.nomeConjuge = nomeConjuge;
+        this.situacao = situacao;
+        this.observacoes = observacoes;
+    }
+
+    public long getIdFuncionario() {
+        return idFuncionario;
+    }
+
+    public void setIdFuncionario(long idFuncionario) {
+        this.idFuncionario = idFuncionario;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSalario() {
+        return salario;
+    }
+
+    public void setSalario(String salario) {
+        this.salario = salario;
+    }
+
+    public String getUF() {
+        return UF;
+    }
+
+    public void setUF(String UF) {
+        this.UF = UF;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+
+    public String getNomeConjuge() {
+        return nomeConjuge;
+    }
+
+    public void setNomeConjuge(String nomeConjuge) {
+        this.nomeConjuge = nomeConjuge;
+    }
+
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
+
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+    
+    public LinkedList<String> getEstados(){
+        LinkedList<String> estados = new LinkedList<>();
+        estados.add("PR");
+        estados.add("RS");
+        estados.add("SC");
+        return estados;
+    }
+    
+    public LinkedList<String> getEstadosCivis(){
+        LinkedList<String> estados = new LinkedList<>();
+        estados.add("Solteiro");
+        estados.add("Casado");
+        return estados;
+    }
+    
+    public LinkedList<String> getSituacoes(){
+        LinkedList<String> situacoes = new LinkedList<>();
+        situacoes.add("Ativo");
+        situacoes.add("Afastado");
+        situacoes.add("Aposentado");
+        situacoes.add("Licença");
+        return situacoes;
+    }
+    
+    public LinkedList<Funcionario> listar(){
+        LinkedList<Funcionario> lista;
+        try{
+            System.out.println("Funcionario listar try");
+            lista = listAll();
+        }
+        catch(Exception e){
+            lista = new LinkedList();
+            lista.add(new Funcionario("André", "2000", "RS", "Casado", "Bruna", "Ativo", "Teste"));
+        }
+        return lista;
+    }
+    
+    public void imprime(){
+        System.out.println("Nome: " + nome);
+        System.out.println("Salário: " + salario);
+        System.out.println("UF: " + UF);
+        System.out.println("Estado Civil: " + estadoCivil);
+        if(estadoCivil.equals("Casado"))
+            System.out.println("Nome Conjugê: " + nomeConjuge);
+        System.out.println("Situação: " + situacao);
+        System.out.println("Observações: " + observacoes);
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + " Salário: " + salario;
+    }  
+    public int insert() {
+        return new FuncionarioDAO().insert(this);
+    }
+    public LinkedList<Funcionario> listAll(){
+        return new FuncionarioDAO().listAll();
+    }
+    
+}
+
+=====================================================================================
+#####################################################################################
+#####################################################################################
+########################### Exemplo Classe Bean (Classe) ############################
+#####################################################################################
+#####################################################################################
+=====================================================================================
+
+package classes;
+
+import java.util.LinkedList;
+import javax.faces.bean.ManagedBean;
+
+
+@ManagedBean
+public class FuncionarioBean {
+    private Funcionario funcionario = new Funcionario();
+    private LinkedList<String> estados;
+    private LinkedList<String> estadosCivis;
+    private LinkedList<String> situacoes;
+    private LinkedList<Funcionario> lista;
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setAluno(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
+
+    public LinkedList<String> getEstados() {
+        if(estados == null)
+           return funcionario.getEstados();
+        return estados; 
+    }
+
+    public LinkedList<String> getEstadosCivis() {
+        if(estadosCivis == null)
+           return funcionario.getEstadosCivis();
+        return estadosCivis; 
+    }
+
+    public LinkedList<String> getSituacoes() {
+        if(situacoes == null)
+           return funcionario.getSituacoes();
+        return situacoes; 
+    }
+    
+    public LinkedList<Funcionario> getLista() {
+       if(lista == null)
+              this.lista = funcionario.listar();
+        return lista;
+    
+    }
+    
+    public String salvar(){
+        lista.add(new Funcionario(funcionario.getNome(), funcionario.getSalario(), 
+                                         funcionario.getUF(), funcionario.getEstadoCivil(),
+                                         funcionario.getNomeConjuge(), funcionario.getSituacao(),
+                                         funcionario.getObservacoes()
+        ));
+        return "Listar";
+    }
+}
+

@@ -1,0 +1,145 @@
+JSF 2 param example
+
+http://www.mkyong.com/jsf2/jsf-2-param-example/
+
+
+In JSF, “f:param” tag allow you to pass a parameter to a component, but it’s behavior is different depends on which type of component it’s attached. For example,
+1. f:param + h:outputFormat
+
+If attach a “f:param” tag to “h:outputFormat“, the parameter is specifies the placeholder.
+
+<h:outputFormat value="Hello,{0}. You are from {1}.">
+	<f:param value="JSF User" />
+	<f:param value="China" />
+</h:outputFormat>
+
+Here’s the output – “Hello JSF User. You are from China“.
+2. f:param + Other Component
+
+If you attach a “f:param” tag to other components like “h:commandButton” , the parameter is turned into request parameter.
+
+<h:commandButton id="submitButton"
+	value="Submit - US" action="#{user.outcome}">
+	<f:param name="country" value="China" />
+</h:commandButton>
+
+In user bean, you can get back the parameter value like this :
+
+Map<String,String> params =
+	FacesContext.getExternalContext().getRequestParameterMap();
+
+String countrry = params.get("country");
+
+JSF f:param example
+
+Here’s a JSF 2.0 application, to show the use of f:param tag in both “h:commandButton” and “h:outputFormat” componenets.
+1. Managed Bean
+
+A simple managed bean.
+
+UserBean.java
+
+package com.mkyong;
+
+import java.util.Map;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+@ManagedBean(name="user")
+@SessionScoped
+public class UserBean{
+
+	public String name;
+	public String country;
+
+	public String outcome(){
+
+		FacesContext fc = FacesContext.getCurrentInstance();
+		this.country = getCountryParam(fc);
+
+		return "result";
+	}
+
+	//get value from "f:param"
+	public String getCountryParam(FacesContext fc){
+
+		Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+		return params.get("country");
+
+	}
+
+	//getter and setter methods
+
+}
+
+2. JSF Page
+
+Two JSF pages for demonstration.
+
+default.xhtml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+
+    <h:body>
+
+    <h1>JSF 2 param example</h1>
+
+      <h:form id="form">
+
+	Enter your name :
+	<h:inputText size="10" value="#{user.name}" />
+
+	<br /><br />
+
+	<h:commandButton id="submitButton"
+		value="Submit - US" action="#{user.outcome}">
+
+		<f:param name="country" value="United States" />
+
+	</h:commandButton>
+
+      </h:form>
+
+    </h:body>
+</html>
+
+result.xhtml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+
+    <h:body>
+
+    <h1>JSF 2 param example</h1>
+
+     <h2>
+     <h:outputFormat value="Hello,{0}. You are from {1}.">
+	 <f:param value="#{user.name}" />
+	 <f:param value="#{user.country}" />
+     </h:outputFormat>
+     </h2>
+
+    </h:body>
+
+</html>
+
+3. Demo
+
+Enter your name, e.g “mkyong”, and click on the button.
+jsf2-Param-Example-1
+
+Display the formatted message, “name” from user input, “country” from button parameter.
+jsf2-Param-Example-2

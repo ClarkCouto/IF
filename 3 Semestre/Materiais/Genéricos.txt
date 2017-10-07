@@ -1,0 +1,47 @@
+Genéricos
+E - elemento
+K - Chave
+V - Valor
+T - Tipo
+S, U..
+
+
+T -> … substituido pelo nome da Classe que est· sendo inserida, s„o objetos
+E -> Pilhas, filas, arrays, etc. Pois s„o compostos por Elementos
+
+Par<Double, Double> numero = new Par<>();
+numero.setPrimeiro(20.0);
+
+Classe:
+
+public class Par <P, S>{
+  private P primeiro;
+  private S segundo;
+  public Par(){}	
+  public Par(P p, S s){
+	  primeiro = p;  segundo = s;
+  }
+  public P getPrimeiro(){return primeiro;}
+  public S getSegundo(){return segundo;}
+  public void setPrimeiro(P p){primeiro= p;}
+  public void setSegundo(S s){segundo = s;}
+  public String toString(){ return primeiro + " " + segundo;}
+}
+
+
+
+Exemplo Utilização:
+
+		Par<Long, String> par1 = new Par<>();
+		par1.setPrimeiro(1234L);
+		par1.setSegundo("Cris");
+
+		Par<Float, Float> par2 = new Par<>();
+		par2.setPrimeiro(34.5F);
+		par2.setSegundo(28.3F);
+
+
+Tarefa 1
+Criar a classe código que pode ser parametrizada:
+S - Nome do setor (Inteiros ou String)
+C - Código Sequencial Inteiros

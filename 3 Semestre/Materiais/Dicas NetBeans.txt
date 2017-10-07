@@ -1,0 +1,6 @@
+Dicas NetBeans
+
+Alt + Insert => Abre a tela de inserção de código
+
+psvm + tab => Cria o método Main
+

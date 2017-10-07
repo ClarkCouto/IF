@@ -1,0 +1,6 @@
+Biblioteca -> Botão direito -> Adicionar JAR/Pasta -> Selecionar o arquivo .bin do banco desejado
+
+
+Class.forName("com.mysql.jdbc.Driver"); -> Carrega o driver de conexão com o banco
+	
+

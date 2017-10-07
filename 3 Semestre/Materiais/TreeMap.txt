@@ -1,0 +1,9 @@
+
+		TreeMap<Long, ClientePF> mapaClientes =  new TreeMap<Long, ClientePF>();
+		mapaClientes.put(1598825089L, new ClientePF("Clark", new Endereco ("Adao Baino, 701", "Apto 409"), new Telefone(51, 985436313)));
+		
+		for (Map.Entry<Long,ClientePF> entry : mapaClientes.entrySet()) {
+	        Long key = entry.getKey();
+			ClientePF value = entry.getValue();
+			System.out.println("Cliente: " + key.toString() + "\n" + value.toString());
+	   }

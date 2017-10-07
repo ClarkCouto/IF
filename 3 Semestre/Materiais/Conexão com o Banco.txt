@@ -1,0 +1,9 @@
+Conexão com banco (Netbeans)
+https://netbeans.org/kb/docs/ide/oracle-db_pt_BR.html
+
+https://desenvolvimentoaberto.org/2014/05/07/conexao-oracle-database-xe-jdbc-java/
+
+http://www.feltex.com.br/felix/exemplo-completo-jsp-jstl-servlet-jdbc-postgresql/
+
+https://netbeans.org/kb/docs/web/mysql-webapp_pt_BR.html
+

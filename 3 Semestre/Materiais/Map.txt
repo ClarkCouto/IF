@@ -1,0 +1,14 @@
+
+================== MAP ===================
+Direita = Din‚mico (Classe e pode ser inst‚nciada)
+Esquerda = Est·tico (Interface)
+
+Put = inserir valor
+KeySet = chave
+Values = Valor
+
+Hash È formado sobre o valor e n„o sobre a chave
+
+HashTable => N„o permite valores duplicados
+
+TreeMap => Automaticamente ordenado
