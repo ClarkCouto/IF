@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Inserir Curso</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="nome" value="Digite o nome do Curso:"/>
+                <h:inputText id="nome" value="#{cursoBean.curso.nome}"/>
+                <h:outputLabel for="cargaHoraria" value="Digite a carga horária: "/>
+                <h:inputText id="cargaHoraria" value="#{cursoBean.curso.cargaHoraria}"/>
+                <h:outputLabel for="conteudoPragmatico" value="Digite o conteúdo pragmático: "/>
+                <h:inputText id="conteudoPragmatico" value="#{cursoBean.curso.conteudoPragmatico}"/>
+                <h:outputLabel for="valor" value="Digite o valor: "/>
+                <h:inputText id="valor" value="#{cursoBean.curso.valor}"/>
+
+                <h:commandButton value="Ok" action="#{cursoBean.inserirCurso(cursoBean.curso)}"/>
+                <h:commandButton value="Ok" action="#{cursoBean.inserir()}"/>
+            </h:panelGrid>
+        </h:form>
+        <br /><br />
+        <!-- Só renderiza se o atibuto não estiver vazio-->
+        <h:outputLabel value="#{cursoBean.curso.toString()}" rendered="#{not empty cursoBean.curso.nome}"  />
+        <h:outputLabel value="#{cursoBean.getLista()}" rendered="#{not empty cursoBean.lista}"  />
+        <!--
+        <h:outputLabel value="Nome digitado: #{curso.nome}" rendered="#{not empty curso.nome}"/><br />
+        <h:outputLabel value="Carga Horária digitado: #{curso.cargaHoraria}" rendered="#{not empty curso.cargaHoraria}"/><br />
+        <h:outputLabel value="Conteúdo Pragmático digitado: #{curso.conteudoPragmatico}" rendered="#{not empty curso.conteudoPragmatico}"/><br />
+        <h:outputLabel value="Valor digitado: #{curso.valor}" rendered="#{not empty curso.valor}"/><br />
+        -->
+    </h:body>
+</html>
+
